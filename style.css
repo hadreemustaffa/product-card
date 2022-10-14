@@ -49,6 +49,7 @@ article {
 	display: flex;
 	flex-direction: column;
 	border-radius: 8px;
+	overflow: hidden;
 }
 #product-image {
 	flex-basis: 40%;
@@ -151,7 +152,6 @@ article {
 		width: 90vw;
 		max-width: 600px;
 		flex-direction: row;
-		overflow: hidden;
 	}
 	#product-image,
 	#details-container {
