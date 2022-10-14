@@ -36,7 +36,7 @@ Users should be able to:
 
 There are some HTML tags and CSS properties that I never used before or have forgotten:
 
-1. HTML <picture> tag, which is used for changing image at different breakpoints.
+1. HTML < picture > tag, which is used for changing image at different breakpoints.
 
 ```html
 <picture>
