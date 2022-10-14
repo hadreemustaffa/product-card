@@ -146,7 +146,7 @@ article {
 }
 
 @media screen and (min-width: 620px) {
-	main {
+	article {
 		height: 50vh;
 		min-height: 455px;
 		width: 90vw;
