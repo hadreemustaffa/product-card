@@ -137,8 +137,9 @@ article {
 }
 
 #attribution {
-	font-size: 11px;
+	font-size: 12px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 #attribution a {
 	color: var(--link);
