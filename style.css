@@ -30,6 +30,7 @@ body {
 	min-height: 100vh;
 }
 
+h1,
 h2 {
 	font-size: clamp(1.75rem, 2.7vw + 0.7rem, 2rem);
 }
