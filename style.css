@@ -40,7 +40,7 @@ p,
 	font-size: clamp(0.83rem, 0.74vw + 0.54rem, 0.9rem);
 }
 
-article {
+main {
 	background-color: white;
 	max-height: 576px;
 	width: 90vw;
@@ -147,7 +147,7 @@ article {
 }
 
 @media screen and (min-width: 620px) {
-	article {
+	main {
 		max-width: 600px;
 		flex-direction: row;
 	}
