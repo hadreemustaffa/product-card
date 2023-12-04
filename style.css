@@ -1,163 +1,260 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
-
-:root {
-	/* fonts */
-	--montserrat: 'Montserrat', sans-serif;
-	--fraunces: 'Fraunces', serif;
-
-	/* colors */
-	--main-color: hsl(30, 38%, 92%);
-	--sub-color: hsl(158, 36%, 37%);
-	--btn-active-color: hsl(158, 36%, 22%);
-	--text-title: hsl(212, 21%, 14%);
-	--text-subtitle: hsl(228, 12%, 48%);
-	--link: hsl(228deg, 45%, 44%);
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+    url('./assets/fonts/montserrat/Montserrat-Bold.woff2') format('woff2'),
+    url('./assets/fonts/montserrat/Montserrat-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat Medium'), local('Montserrat-Medium'),
+    url('./assets/fonts/montserrat/Montserrat-Medium.woff2') format('woff2'),
+    url('./assets/fonts/montserrat/Montserrat-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  src: local('Fraunces 72pt Bold'), local('Fraunces72pt-Bold'),
+    url('./assets/fonts/fraunces/Fraunces72pt-Bold.woff2') format('woff2'),
+    url('./assets/fonts/fraunces/Fraunces72pt-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --montserrat: 'Montserrat', sans-serif;
+  --fraunces: 'Fraunces', serif;
+
+  --clr-primary-bg: hsl(30, 38%, 92%);
+  --clr-primary-green: hsl(158, 36%, 37%);
+  --clr-accent-green: hsl(158, 36%, 22%);
+  --clr-text-title: hsl(212, 21%, 14%);
+  --clr-text-subtitle: hsl(228, 12%, 48%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: var(--main-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	min-height: 100vh;
+  background-color: var(--clr-primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1,
 h2 {
-	font-size: clamp(1.75rem, 2.7vw + 0.7rem, 2rem);
+  font-size: clamp(1.75rem, 2.7vw + 0.7rem, 2rem);
 }
 
 p,
-#btn {
-	font-size: clamp(0.83rem, 0.74vw + 0.54rem, 0.9rem);
+.btn {
+  font-size: clamp(0.83rem, 0.74vw + 0.54rem, 0.9rem);
 }
 
 main {
-	background-color: white;
-	max-height: 576px;
-	width: 90vw;
-	min-width: 288px;
-	max-width: 324px;
-	display: flex;
-	flex-direction: column;
-	border-radius: 8px;
-	margin: 20px auto;
-	overflow: hidden;
+  background-color: white;
+  width: 90vw;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-#product-image {
-	flex-basis: 40%;
+picture {
+  flex-basis: 50%;
 }
-#product-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+picture img {
+  height: 100%;
 }
 
-#details-container {
-	flex-basis: 60%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 7%;
+.product {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-#product-tag {
-	color: var(--text-subtitle);
-	font-family: var(--montserrat);
-	font-weight: 500;
-	letter-spacing: 4px;
+.product__tag {
+  color: var(--clr-text-subtitle);
+  font-family: var(--montserrat);
+  font-weight: 500;
+  letter-spacing: 4px;
 }
 
-#product-name {
-	margin: 3.5% 0;
-	color: var(--text-title);
-	font-family: var(--fraunces);
-	font-weight: bold;
-	line-height: 1.1;
+.product__name {
+  color: var(--clr-text-title);
+  font-family: var(--fraunces);
+  font-weight: bold;
+  line-height: 1.1;
 }
 
-#product-description {
-	margin: 1.25% 0;
-	color: var(--text-subtitle);
-	font-family: var(--montserrat);
-	font-weight: 500;
-	line-height: 1.8;
+.product__description {
+  color: var(--clr-text-subtitle);
+  font-family: var(--montserrat);
+  font-weight: 500;
+  line-height: 1.8;
 }
 
-#price {
-	margin: 3.5% 0;
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	height: auto;
+.product__price {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
 }
 
-#sale-price {
-	width: fit-content;
-	font-family: var(--fraunces);
-	font-weight: bold;
-	color: var(--sub-color);
+.product__price-sale {
+  width: fit-content;
+  font-family: var(--fraunces);
+  font-weight: bold;
+  color: var(--clr-primary-green);
 }
 
-#original-price {
-	align-self: center;
-	text-align: center;
-	padding-left: 10%;
-	font-family: var(--montserrat);
-	font-weight: 500;
-	color: var(--text-subtitle);
+.product__price-original {
+  align-self: center;
+  text-align: center;
+  padding-left: 10%;
+  font-family: var(--montserrat);
+  font-weight: 500;
+  color: var(--clr-text-subtitle);
+  text-decoration: line-through;
 }
 
-#btn {
-	font-family: var(--montserrat);
-	font-weight: bold;
-	border: none;
-	border-radius: 8px;
-	color: white;
-	background-color: var(--sub-color);
-	padding: 5%;
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--montserrat);
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--clr-primary-green);
+  padding: 5%;
 }
-#btn:hover {
-	background-color: var(--btn-active-color);
-	cursor: pointer;
+.btn:hover {
+  background-color: var(--clr-accent-green);
+  cursor: pointer;
 }
-#btn:active {
-	background-color: var(--sub-color);
+.btn:active {
+  background-color: var(--clr-primary-green);
 }
-#btn img {
-	vertical-align: middle;
-	padding-right: 6px;
-}
-
-#attribution {
-	font-size: 12px;
-	text-align: center;
-	margin-bottom: 20px;
-}
-#attribution a {
-	color: var(--link);
+.btn img {
+  width: 24px;
+  height: 24px;
 }
 
-@media screen and (min-width: 620px) {
-	main {
-		max-width: 600px;
-		flex-direction: row;
-	}
-
-	#product-image,
-	#details-container {
-		flex-basis: 50%;
-	}
-
-	#details-container {
-		padding: 5.5%;
-	}
+@media screen and (min-width: 36rem) {
+  main {
+    max-width: 600px;
+    flex-direction: row;
+  }
 }
